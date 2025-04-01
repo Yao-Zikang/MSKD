@@ -1,0 +1,32 @@
+EXPERIMENT:
+  NAME: "res110_res32"
+  TAG: "res110_res32"
+  PROJECT: "res110_res32"
+DISTILLER:
+  TYPE: "MSKD"
+  TEACHER: "resnet110"
+  STUDENT: "resnet32"
+SOLVER:
+  BATCH_SIZE: 64
+  EPOCHS: 240
+  LR: 0.05
+  LR_DECAY_STAGES: [150, 180, 210]
+  LR_DECAY_RATE: 0.1
+  WEIGHT_DECAY: 0.0005
+  MOMENTUM: 0.9
+  TYPE: "SGD"
+
+LOG:
+  WANDB: False
+
+MSKD:
+  LOSS:
+    CAT_loss_weight: 1.8
+    CAM_RESOLUTION: 2
+    CE_WEIGHT: 1.
+    T: 4.0
+    sim_weight: 0.5
+  IF_NORMALIZE: False
+
+if_test: True
+device: 0

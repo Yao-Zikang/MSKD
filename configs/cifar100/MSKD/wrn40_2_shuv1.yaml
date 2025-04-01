@@ -1,0 +1,33 @@
+EXPERIMENT:
+  NAME: "wrn_40_2,shuv1"
+  TAG: "wrn_40_2,shuv1"
+  PROJECT: "wrn_40_2,shuv1"
+DISTILLER:
+  TYPE: "MSKD"
+  TEACHER: "wrn_40_2"
+  STUDENT: "ShuffleV1"
+SOLVER:
+  BATCH_SIZE: 64
+  EPOCHS: 240
+  LR: 0.01
+  LR_DECAY_STAGES: [150, 180, 210]
+  LR_DECAY_RATE: 0.1
+  WEIGHT_DECAY: 0.0005
+  MOMENTUM: 0.9
+  TYPE: "SGD"
+
+LOG:
+  WANDB: False
+
+MSKD:
+  LOSS:
+    # β
+    CAT_loss_weight: 80.
+    CAM_RESOLUTION: 4
+    CE_WEIGHT: 1.
+    T: 0.2
+    sim_weight: 0.5
+  IF_NORMALIZE: True
+
+if_test: True
+device: 0
