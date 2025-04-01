@@ -21,7 +21,6 @@ LOG:
 
 MSKD:
   LOSS:
-    # β
     CAT_loss_weight: 80.
     CAM_RESOLUTION: 4
     CE_WEIGHT: 1.
