@@ -29,4 +29,4 @@ MSKD:
   IF_NORMALIZE: True
 
 if_test: True
-device: 1
+device: 0
